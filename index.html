@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f1720">
+<title>Shop Brain · SC Precision Deburring</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23ffb347%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2720%27 text-anchor=%27middle%27%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">SC Precision Deburring · Draft Night Big Board</p>
+    <h1>Shop Brain</h1>
+    <p class="lede">One place to see every bot and what they all know.</p>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <div class="wrap tabs-in">
+      <button role="tab" data-tab="map" aria-selected="true">Bot map</button>
+      <button role="tab" data-tab="facts" aria-selected="false">Facts</button>
+      <button role="tab" data-tab="notes" aria-selected="false">Notes</button>
+      <button role="tab" data-tab="ai" aria-selected="false">Other AIs</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <noscript><p class="card">This page needs JavaScript. The raw files are in the data folder: facts.md, notes.json, bots.json.</p></noscript>
+  <p id="loaderr" class="card warn" hidden></p>
+
+  <section id="tab-map" class="panel">
+    <div class="map-grid">
+      <div class="diagram-box">
+        <p class="hint">Tap a bot to see who it hands off to.</p>
+        <div id="diagram"></div>
+        <div class="legend">
+          <span><i class="dot shop"></i>Shop</span>
+          <span><i class="dot draft"></i>Draft Night</span>
+          <span><i class="dot core"></i>Core</span>
+          <span><i class="dot new"></i>New</span>
+        </div>
+      </div>
+      <div class="cards-col">
+        <aside id="detail" class="card detail" aria-live="polite"></aside>
+        <div id="cards"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-facts" class="panel" hidden>
+    <article id="facts" class="card prose"></article>
+    <p class="muted">Source: <a href="data/facts.md">data/facts.md</a></p>
+  </section>
+
+  <section id="tab-notes" class="panel" hidden>
+    <h2>Notes feed</h2>
+    <p class="muted">Newest first. Bots and AI tools add one dated line each time they learn something. Source: <a href="data/notes.json">data/notes.json</a></p>
+    <ol id="notes" class="feed"></ol>
+    <details class="card">
+      <summary>How to add a note</summary>
+      <p>Add an object to the top of the <code>notes</code> list in <code>data/notes.json</code>:</p>
+<pre>{
+  "date": "2026-10-03",
+  "author": "SCD inbox",
+  "tags": ["email"],
+  "text": "One plain sentence. No prices, amounts or contact details."
+}</pre>
+    </details>
+  </section>
+
+  <section id="tab-ai" class="panel" hidden>
+    <h2>How other AIs use this</h2>
+    <div class="card prose">
+      <p>Claude, ChatGPT, Grok or any other AI can catch up in seconds. It only needs the same facts every bot has.</p>
+      <ol class="steps">
+        <li><strong>Tap the button below.</strong> It copies the facts, the bot list and the notes as plain text.</li>
+        <li><strong>Paste it</strong> at the start of a new chat.</li>
+        <li><strong>Then ask your question.</strong> The AI now knows the shop, the rules and the voice.</li>
+      </ol>
+      <button id="copy" class="big">Copy context pack</button>
+      <p id="copied" class="ok" role="status" aria-live="polite"></p>
+      <details>
+        <summary>Preview the text</summary>
+        <pre id="pack" class="pack"></pre>
+      </details>
+    </div>
+    <div class="card prose">
+      <h3>Or give it the raw files</h3>
+      <p>If the AI can open links or take file uploads, give it these:</p>
+      <ul class="links">
+        <li><a href="data/facts.md">facts.md</a> <span>shop facts and rules</span></li>
+        <li><a href="data/notes.json">notes.json</a> <span>dated learnings</span></li>
+        <li><a href="data/bots.json">bots.json</a> <span>every bot, its job and hand-offs</span></li>
+      </ul>
+      <h3>Rules for any AI that reads this</h3>
+      <ul>
+        <li>Facts here win over guesses.</li>
+        <li>Never send anything without Santiago's yes.</li>
+        <li>When you learn something, add a note to <code>notes.json</code>.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">Shop Brain · <span id="stamp"></span></footer>
+<script src="app.js"></script>
+</body>
+</html>
