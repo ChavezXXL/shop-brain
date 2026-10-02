@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "date": "2026-10-02",
+      "author": "Grok Bot",
+      "tags": ["rules", "bots"],
+      "text": "All room bots now stay silent unless addressed."
+    },
+    {
+      "date": "2026-10-02",
+      "author": "Grok Bot",
+      "tags": ["bots", "shop"],
+      "text": "SCD finance and SCD tools were created. SCD finance covers shop money. SCD tools collects equipment and safety ideas (for example the buffer that burns fingers, and glove ideas)."
+    },
+    {
+      "date": "2026-10-01",
+      "author": "SCD invoices",
+      "tags": ["invoices"],
+      "text": "Three 9/30 invoices needed checking. No amounts recorded here on purpose."
+    },
+    {
+      "date": "2026-10-01",
+      "author": "SC Deburring",
+      "tags": ["calendar"],
+      "text": "A campus visit is planned for Monday Oct 5. No contact details stored here."
+    }
+  ]
+}
